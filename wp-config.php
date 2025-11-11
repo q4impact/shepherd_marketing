@@ -26,7 +26,7 @@ define( 'DB_NAME', 'shepherd' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'mysql' );
+define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -85,11 +85,18 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+// // Enable WP_DEBUG mode
+define( 'WP_DEBUG', true );
 
+// // Enable Debug logging to the /wp-content/debug.log file
+define( 'WP_DEBUG_LOG', true );
+
+// // Disable display of errors and warnings
+define( 'WP_DEBUG_DISPLAY', false );
 
 /* That's all, stop editing! Happy publishing. */
 

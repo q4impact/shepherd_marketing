@@ -1,0 +1,15 @@
+.DS_Store
+**/.DS_Store
+
+# ignore log files and databases
+*.log
+**/.log
+*.sqlite
+
+
+
+wp-content/uploads/wpforms/cache/addons.json
+wp-content/uploads/wpforms/cache/addons.json
+wp-content/uploads/wpforms/cache/wpforms-pro-plugin-update-2413ebe26fcc7a249efaf05ad9b0cc90.json
+wp-content/uploads/wpforms/cache/wpforms-pro-plugin-info-2bc706c58d14c42102bd675d448672d0.json
+/wp-content/uploads/wpforms/cache

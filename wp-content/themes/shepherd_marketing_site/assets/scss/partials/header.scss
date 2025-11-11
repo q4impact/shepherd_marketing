@@ -66,6 +66,24 @@ header {
         left:0;
         width:100%;
     }
+    #menu-toggle {
+        float:right;
+        width:20px;
+        height:20px;
+        margin-top:20px;
+        background-image:url('images/icon-menu-toggle.png');
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:100%;
+        display:none;
+        @include transition(100ms);
+        @include mq(800px) {
+            display:block;
+        }
+        &.active {
+            background-image:url('images/icon-close-white.png');
+        }
+    }
     #header-logo {
         margin-top:35px;
         width:200px;
@@ -106,14 +124,35 @@ header {
             left:0;
             width:100%;
             height:calc(100vh - 60px);
-            background-color:$navy;
-            padding-top:20px;
-            display:none;
+            background-color:$dark-navy;
+            padding-top:30px;
+            @include transition(300ms);
+            opacity:0;
+            visibility:hidden;
+            &.active {
+                opacity:1;
+                visibility:visible;
+            }
+            &:after {
+                content:'';
+                position:absolute;
+                z-index:1;
+                bottom:-100%;
+                left:50%;
+                width:200%;
+                height:175%;
+                @include translate(-50%, 0);
+                background: radial-gradient(ellipse at center, rgba(110,143,191,1) 0%,rgba(110,143,191,0) 67%);
+                opacity:0.5;
+            }
+
         }
         li {
             float:left;
             @include mq(800px) {
                 float:none;
+                position:relative;
+                z-index:2;
             }
             a {
                 display:block;
@@ -131,8 +170,9 @@ header {
                 }
                 @include mq(800px) {
                     text-align:center;
-                    font-size:1.25em;
                     padding:5px 0;
+                    font-size:1.4em;
+                    color:$white;
                 }
                 &:hover {
                     color:$white;
@@ -166,8 +206,30 @@ header {
                 a {
                     color:$blue;
                     opacity:1;
+                    filter:brightness(1.1);
                 }
             }
+        }
+    }
+    #header-social {
+        position:fixed;
+        top:calc(100vh - 70px);
+        left:50%;
+        @include translate(-50%, 0);
+        opacity:0;
+        visibility:hidden;
+        @include transition(300ms);
+        &.active {
+            opacity:1;
+            visibility:visible;
+        }
+        a {
+            display:inline-block;
+            width:30px;
+            height:30px;
+            opacity:0.7;
+            margin-left:10px;
+
         }
     }
 }

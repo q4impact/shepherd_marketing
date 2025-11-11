@@ -17,6 +17,10 @@ function blankie_scripts()
       wp_enqueue_script( 'inc', get_template_directory_uri() . '/js/inc.js', true );
       // FAQ
       wp_enqueue_script( 'faq', get_template_directory_uri() . '/js/faq.js', true );
+      // Card Tab Group
+      wp_enqueue_script( 'card-tab-group', get_template_directory_uri() . '/js/card-tab-group.js', true );
+      // Feature Tab Group
+      wp_enqueue_script( 'feature-tab-group', get_template_directory_uri() . '/js/feature-tab-group.js', true );
   }
 
 add_action('init', 'blankie_scripts'); // Add Scripts

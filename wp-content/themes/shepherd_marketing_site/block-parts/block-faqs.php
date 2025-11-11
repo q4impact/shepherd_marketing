@@ -14,7 +14,7 @@ $faq_types = get_terms( array(
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="inner-wrapper">
         <h4>Select Category</h4>
-        <div id="faq-filter-trigger">Filter: <span>All</span></div>
+        <div id="faq-filter-trigger">Select a Category: <span>All</span></div>
         <ul class="faqs-filter">
             <li data-id="all" class="active">All</li>
             <?php foreach ($faq_types as $term) { ?>

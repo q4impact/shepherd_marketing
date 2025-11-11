@@ -1,5 +1,7 @@
 footer {
     position:relative;
+    font-size:16px;
+    @include responsive-text();
     #footer-gradient {
         background: radial-gradient(ellipse at center, rgba(110,143,191,1) 0%,rgba(110,143,191,0) 67%);
         position:absolute;
@@ -13,7 +15,13 @@ footer {
     }
     #footer-top {
         position:relative;
-        padding:80px 0 20px 0;
+        padding:80px 30px 20px 30px;
+        @include mq(1000px) {
+            padding:20px;
+        }
+        @include mq(800px) {
+            padding:15px 10px;
+        }
         &:before {
             content:'';
             height:1px;
@@ -26,14 +34,32 @@ footer {
         #footer-logo {
             width:200px;
             float:left;
+            @include mq(1000px) {
+                width:120px;
+            }
+            @include mq(600px) {
+                float:none;
+                
+            }
         }
         p {
+            font-size:1em;
             float:right;
             margin-top:15px;
+            @include mq(600px) {
+                float:none;
+                margin-top:5px;
+            }
         }
     }
     #footer-mid {
-        padding:50px 0 100px 0;
+        padding:50px 30px 100px 30px;
+        @include mq(1000px) {
+            padding:20px;
+        }
+        @include mq(800px) {
+            padding:10px;
+        }
         &:before {
             content:'';
             height:1px;
@@ -46,17 +72,36 @@ footer {
         #footer-mid-nav {
             width:50%;
             float:left;
+            @include mq(1000px) {
+                width:100%;
+                float:none;
+            }
             .footer-mid-nav-col {
                 margin-right:40px;
                 float:left;
+                @include mq(1000px) {
+                    margin-right:20px;
+                    width:calc(33.33% - 20px);
+                }
+                @include mq(600px) {
+                    margin-right:10px;
+                    width:calc(33.33% - 10px);
+                }
                 h3 {
-                    font-size:20px;
+                    font-size:1.1em;
                     margin-bottom:15px;
                     font-weight:600;
+                    @include mq(1000px) {
+                        margin-bottom:5px;
+                    }
                 }
                 a {
                     padding:10px 0;
                     display:block;
+                    font-size:1em;
+                    @include mq(1000px) {
+                        padding:5px 0;
+                    }
                 }
             }
         }
@@ -64,38 +109,105 @@ footer {
             float:right;
             width:50%;
             max-width:400px;
+            @include mq(1000px) {
+                width:100%;
+                float:none;
+                max-width:none;
+                margin:20px 0;
+            }
             h3 {
-                font-size:24px;
+                font-size:1.5em;
                 font-weight:600;
                 margin-bottom:10px;
             }
             p {
-                margin-bottom:20px;
+                margin-bottom:10px;
+                font-size:1em;
             }
             #footer-demo-input {
                 @include border-radius(5px);
                 overflow:hidden;
                 position:relative;
-                input {
-                    width:100%;  
+                .wpforms-container {
+                    label {
+                        display:none;
+                    }
+                    input {
+                        width:100%;
+                        max-width:none;
+                        &.wpforms-error {
+                            border:1px solid $red;
+                        }
+                    }
+                    .wpforms-confirmation-container {
+                        p {
+                            color:$gold;
+                            font-size:1.25em;
+                        }
+                    }
+                    .wpforms-error {
+                        margin-top:8px;
+                        color:$red;
+                    }
+                    .wpforms-submit {
+                        display:inline-block;
+                        height:45px;
+                        line-height:45px;
+                        padding:0 30px;
+                        font-size:16px;
+                        @include border-radius(5px);
+                        @include transition(300ms);
+                        text-decoration:none;
+                        font-weight:300;
+                        background-color:$gold;
+                        border:0;
+                        outline:none;
+                        color:$white;
+                        @include mq(1000px) {
+                            height:40px;
+                            line-height:40px;
+                        }
+                        @include mq(800px) {
+                            height:35px;
+                            line-height:35px;
+                            padding:0 20px;
+                            font-size:15px;
+                        }
+                        @include mq(600px) {
+                            height:30px;
+                            line-height:30px;
+                            padding:0 15px;
+                            font-size:14px;
+                            max-width:250px;
+                        }
+                    }
                 }
-                a {
-                    position:absolute;
-                    right:0;
-                    top:0;
-                    height:100%;
-                    aspect-ratio:1;
-                    background-color:$gold;
-                    background-image:url('images/svg/icon-send-white.svg');
-                    background-size:50%;
-                    background-position: center center;
-                    background-repeat:no-repeat;
-                }
+                // input {
+                //     width:100%;  
+                // }
+                // a {
+                //     position:absolute;
+                //     right:0;
+                //     top:0;
+                //     height:100%;
+                //     aspect-ratio:1;
+                //     background-color:$gold;
+                //     background-image:url('images/svg/icon-send-white.svg');
+                //     background-size:50%;
+                //     background-position: center center;
+                //     background-repeat:no-repeat;
+                // }
             }
         }
     }
     #footer-bottom {
-        padding:40px 0 40px 0;
+        padding:40px 30px 40px 30px;
+        @include mq(1000px) {
+            padding:20px;
+        }
+        @include mq(800px) {
+            padding:10px;
+        }
         #footer-copyright {
             color:$navy60;
             float:left;
@@ -111,6 +223,11 @@ footer {
                 margin-left:10px;
                 &:hover {
                     opacity:1;
+                }
+                @include mq(800px) {
+                    width:25px;
+                    height:25px;
+                    margin-left:5px;
                 }
             }
         }

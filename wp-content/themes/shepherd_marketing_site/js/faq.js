@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     /************************** Initial Load *********************/
-    load_faqs();
+    const faqs = document.querySelector('.block-faqs');
+    if (faqs) {
+        load_faqs();
+    }
     /************************* Filter Click Handler ************************/
     const faqFilters = document.querySelectorAll('.faqs-filter li');
     faqFilters.forEach(function (btn) {
@@ -40,10 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     /************************ Open the filter on mobile *************************/
     const faqFilterTrigger = document.getElementById('faq-filter-trigger');
-    faqFilterTrigger.addEventListener('click', function() {
-        const faqFilterMenu = document.querySelector('.faqs-filter');
-        faqFilterMenu.classList.toggle('active');   
-    });
+    if (faqFilterTrigger) {
+        faqFilterTrigger.addEventListener('click', function() {
+            const faqFilterMenu = document.querySelector('.faqs-filter');
+            faqFilterMenu.classList.toggle('active');   
+        });
+    }
 });
 
 

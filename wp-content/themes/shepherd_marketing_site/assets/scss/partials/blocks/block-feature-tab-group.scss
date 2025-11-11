@@ -2,18 +2,72 @@
     font-size:16px;
     padding:40px 30px;
     @include mq(1000px) {
-        padding:30px 20px;
+        padding:20px 20px;
     }
     @include mq(800px) {
         padding:20px 10px;
     }
     @include responsive-text();
+    .feature-tab-group-trigger {
+        display:block;
+        background-color:$dark_navy;
+        padding:15px;
+        font-size:1.1em;
+        color:$navy40;
+        cursor:pointer;
+        @include transition(300ms);
+        border:2px solid transparent;
+        @include border-radius(5px);
+        width:100%;
+        box-sizing: border-box;
+        color:$white;
+        background-image:url('images/icon-select-navy40.png');
+        background-size:10px;
+        background-position:right 15px center;
+        background-repeat:no-repeat;
+        display:none;
+        border:2px solid $navy80;
+        margin-bottom:10px;
+        @include mq(1000px) {
+            display:block;
+        }
+        @include mq(600px) {
+            padding:15px 10px;
+        }
+    }
     .feature-tab-group-nav {
         overflow:hidden;
         text-align:center;
         margin-bottom:50px;
         @include mq(1000px) {
             margin-bottom:20px;
+        }
+        @include mq(1000px) {
+            position:absolute;
+            top:75px;
+            left:20px;
+            @include translate(0,0);
+            margin:0;
+            background-color:$navy;
+            z-index:10;
+            width:calc(100% - 40px);
+            box-sizing: border-box;
+            padding:20px;
+            @include border-radius(5px);
+            opacity:0;
+            visibility:hidden;
+            @include transition(300ms);
+            box-shadow:0 10px 20px rgba(13, 20, 28, 0.7), 0 6px 6px rgba(13, 20, 28, 1);
+            border:2px solid $navy80;
+            &.active {
+                opacity:1;
+                visibility:visible;
+            }
+        }
+        @include mq(800px) {
+            width:calc(100% - 20px);
+            left:10px;
+            padding:15px;
         }
         .feature-tab-group-nav-item {
             display:inline-block;
@@ -25,6 +79,13 @@
             position:relative;
             @include transition(300ms);
             cursor:pointer;
+            @include mq(1000px) {
+                float:none;
+                display:block;
+                margin:0;
+                padding:0;
+                text-align:left;
+            }
             &:after {
                 content:'';
                 position:absolute;
@@ -36,6 +97,9 @@
                 background-color:$gold;
                 @include border-radius(2px);
                 @include transition(300ms);
+                @include mq(1000px) {
+                    display:none;
+                }
             }
             &.active {
                 opacity:1;
@@ -64,6 +128,12 @@
             float:left;
             opacity:0;
             padding-top:30px;
+            @include mq(800px) {
+                padding-top:20px;
+            }
+            @include mq(600px) {
+                padding-top:10px;
+            }
             &.active {
                 animation: slideUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
             }
@@ -74,9 +144,10 @@
             }
             h1, h2, h3, h4, h5, h6, p {
                 @include mq(1000px) {
-                    position:relative;
-                    left:50%;
-                    @include translate(-50%, 0);
+                    max-width:100% !important;
+                }
+                @include mq(800px) {
+                    margin-top:10px !important;
                 }
             }
             .button-solid-gold {
@@ -88,21 +159,25 @@
             .highlights {
                 margin-top:20px;
                 @include mq(1000px) {
-                    overflow:hidden;
-                     text-align:center;
+                    text-align:center;
                 }
                 li {
                     color:$white;
                     margin-bottom:20px;
                     @include mq(1000px) {
-                        
-                        margin-bottom:10px;
+                        display:inline-block;
+                        width:auto;
+                        margin:0 5px 10px 5px;
                     }
                     p {
                         @include mq(1000px) {
                             text-align:left;
                             white-space:nowrap;
-                        }    
+                            float:left;
+                        }
+                        @include mq(800px) {
+                            margin:0 !important;
+                        }   
                     }
                     img {
                         float:left;
@@ -110,7 +185,7 @@
                         width:25px;
                         margin-right:10px;
                         @include mq(1000px) {
-                            margin-right:5px;
+                            margin:-5px 5px 0 0;
                         }
                     }
                 }
@@ -122,14 +197,15 @@
             padding-left:30px;
             box-sizing:border-box;
             opacity:0;
-            &.active {
-                animation: slideLeft 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                animation-delay:150ms;
-            }
             @include mq(1000px) {
+                margin-top:20px;
                 width:100%;
                 float:none;
                 padding-left:0;
+            }
+            &.active {
+                animation: slideLeft 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                animation-delay:150ms;
             }
             img {
                 width:100%;

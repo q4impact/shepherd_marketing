@@ -1,19 +1,45 @@
 .icon-list {
-    padding:40px 0;
+    padding:30px;
     font-size:16px;
+    @include responsive-text();
+    @include mq(1000px) {
+        padding:20px;
+    }
+    @include mq(800px) {
+        padding:10px;
+    }
     li {
         float:left;
         width:50%;
         box-sizing:border-box;
         padding:20px 40px;
         overflow:hidden;
+        @include mq(1000px) {
+            padding:20px;
+        }
+        @include mq(800px) {
+            width:100%;
+            float:none;
+            padding:10px 0;
+        }
         .icon-list-text {
             width:calc(100% - 80px);
             box-sizing:border-box;
             padding-left:30px;
             float:left;
+            @include mq(1000px) {
+                width:calc(100% - 60px);
+                padding-left:10px;
+            }
+            @include mq(800px) {
+                width:calc(100% - 40px);
+                padding-left:10px;
+            }
             h1, h2, h3, h4, h5, h6, p {
                 margin-bottom:10px;
+                @include mq(800px) {
+                    margin-bottom:5px;
+                }
             }
         }
         .icon-list-image {
@@ -21,6 +47,12 @@
             aspect-ratio:1;
             float:left;
             position:relative;
+            @include mq(1000px) {
+                width:60px;
+            }
+            @include mq(800px) {
+                width:40px;
+            }
             img {
                 position:absolute;
                 top:50%;

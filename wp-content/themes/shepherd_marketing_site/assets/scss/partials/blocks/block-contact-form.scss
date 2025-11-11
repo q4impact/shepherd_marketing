@@ -1,6 +1,13 @@
 .block-contact-form {
-    padding:50px 0;
+    padding:50px 30px;
     font-size:16px;
+    @include responsive-text();
+    @include mq(800px) {
+        padding:30px 20px;
+    }
+    @include mq(600px) {
+        padding:20px 10px;
+    }
     .contact-form-container {
         overflow:hidden;
         padding:30px;
@@ -8,6 +15,12 @@
         background-color:$dark_navy;
         @include border-radius(10px);
         position:relative;
+        @include mq(800px) {
+            padding:20px;
+        }
+        @include mq(600px) {
+            padding:15px;
+        }
         .gradient {
             position:absolute;
             top:-125%;
@@ -26,20 +39,49 @@
             float:left;
             position:relative;
             z-index:2;
+            @include mq(800px) {
+                width:100%;
+                float:none;
+                padding:0;
+                margin-bottom:20px;
+            }
             .contact-form-phone {
                 margin-top:50px;
                 width:50%;
                 float:left;
+                @include mq(1000px) {
+                    margin-top:20px;
+                }
+                @include mq(800px) {
+                    display:inline-block;
+                    float:none;
+                    width:auto;
+                    margin-right:10px;
+                }
                 img {
                     width:30px;
+                    @include mq(1000px) {
+                        width:25px;
+                    }
                 }
             }
             .contact-form-email {
                 margin-top:50px;
                 width:50%;
                 float:left;
+                @include mq(1000px) {
+                    margin-top:20px;
+                }
+                @include mq(800px) {
+                    display:inline-block;
+                    float:none;
+                    width:auto;
+                }
                 img {
                     width:30px;
+                    @include mq(1000px) {
+                        width:25px;
+                    }
                 }
             }
             .contact-form-message {
@@ -52,6 +94,10 @@
             width:60%;
             position:relative;
             z-index:2;
+            @include mq(800px) {
+                width:100%;
+                float:none;
+            }
             label {
                 color:$navy40;
                 font-weight:400;
@@ -59,6 +105,9 @@
             }
             .wpforms-field {
                 clear:none;
+                @include mq(800px) {
+                    padding:5px 0;
+                }
                 input, select {
                     max-width:none;
                     width:100%;
@@ -74,13 +123,22 @@
             }
             .first-name, .last-name {
                 width:calc(50% - 10px);
-                float:left;     
+                float:left;
+                @include mq(600px) {
+                    width:calc(50% - 5px);
+                }     
             }
             .first-name {
                 margin-right:10px;
+                @include mq(600px) {
+                    margin-right:5px;
+                }
             }
             .last-name {
                 margin-left:10px;
+                @include mq(600px) {
+                    margin-left:5px;
+                }
             }
             .email {
                 clear:left;
@@ -88,13 +146,22 @@
             }
             .company, .state {
                 width:calc(50% - 10px);
-                float:left;     
+                float:left;
+                @include mq(600px) {
+                    width:calc(50% - 5px);
+                }    
             }
             .company {
                 margin-right:10px;
+                @include mq(600px) {
+                    margin-right:5px;
+                }
             }
             .state {
                 margin-left:10px;
+                @include mq(600px) {
+                    margin-left:5px;
+                }
             }
             .message {
                 clear:left;

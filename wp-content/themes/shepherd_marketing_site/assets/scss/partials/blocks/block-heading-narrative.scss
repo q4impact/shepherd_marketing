@@ -23,6 +23,12 @@
             @include mq(800px) {
                 margin-bottom:10px;
             }
+            @include mq(600px) {
+                display:block;
+                position:relative;
+                left:50%;
+                @include translate(-50%, 0);
+            }
         }
     }
 }

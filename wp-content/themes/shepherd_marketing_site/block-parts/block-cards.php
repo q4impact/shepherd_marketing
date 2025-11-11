@@ -29,7 +29,9 @@ $cards = get_field('cards');
                         <!------------------ Card Text --------------------->
                         <div class="card-text <?php if ($image['file']) { echo $image_placement; } ?>">
                             <?php if ($logo) { ?>
-                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                <div class="card-logo">
+                                    <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                </div>
                             <?php } ?>
                             <?php if ($kicker['text']) { ?>
                                 <<?php echo esc_html($kicker['html']); ?> style="color:<?php echo esc_html($kicker['color']); ?>; font-size:<?php echo esc_html($kicker['size']); ?>; font-weight:<?php echo esc_html($kicker['weight']); ?>"><?php echo esc_html($kicker['text']); ?></<?php echo esc_html($kicker['html']); ?>>

@@ -7,7 +7,6 @@ function my_allowed_block_types( $allowed_blocks, $editor_context ) {
         'acf/plan-cards',
         'acf/icon-list',
         'acf/card-tab-group',
-        'acf/views-slider',
         'acf/disclaimers',
         'acf/feature-tab-group',
         'acf/faqs',

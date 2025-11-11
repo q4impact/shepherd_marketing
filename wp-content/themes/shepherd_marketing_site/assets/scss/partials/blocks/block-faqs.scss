@@ -14,6 +14,9 @@
     .faqs-loader {
         display:none;
         margin-top:60px;
+        @include mq(1000px) {
+            margin-top:20px;
+        }
         .loader {
             width: 30px;
             padding: 5px;
@@ -61,7 +64,7 @@
         @include translate(-50%, 0);
         @include mq(1000px) {
             position:absolute;
-            top:65px;
+            top:55px;
             left:20px;
             @include translate(0,0);
             margin:0;
@@ -79,16 +82,16 @@
             &.active {
                 opacity:1;
                 visibility:visible;
-                top:60px;
             }
         }
         @include mq(800px) {
             left:10px;
             width:calc(100% - 20px);
             padding:10px;
+            top:55px;
         }
         @include mq(600px) {
-            top:55px;
+            top:52px;
         }
         li {
             display:inline-block;
@@ -122,7 +125,7 @@
     }
     #faq-filter-trigger {
         display:block;
-        background-color:$navy;
+        background-color:$dark_navy;
         padding:15px;
         //margin:20px;
         font-size:1.1em;
@@ -135,13 +138,16 @@
         box-sizing: border-box;
         color:$white;
         background-image:url('images/icon-select-navy40.png');
-        background-size:15px;
+        background-size:10px;
         background-position:right 15px center;
         background-repeat:no-repeat;
         display:none;
         border:2px solid $navy80;
-        @include mq(1000px) {
+        @include mq(800px) {
             display:block;
+        }
+        @include mq(600px) {
+            padding:15px 10px;
         }
         span {
             color:$navy40;
@@ -233,7 +239,10 @@
                 position:relative;
                 z-index:2;
                 @include mq(800px) {
-                    
+                    padding:15px 60px 15px 15px;
+                }
+                @include mq(600px) {
+                    padding:10px 50px 10px 10px;
                 }
                 &:hover {
                     color:$white;
@@ -249,6 +258,10 @@
                     background-repeat: no-repeat;
                     background-size:100%;
                     @include transition(300ms);
+                    @include mq(1000px) {
+                        width:10px;
+                        height:10px;
+                    }
                 }
             }
             .faqs-card-a {

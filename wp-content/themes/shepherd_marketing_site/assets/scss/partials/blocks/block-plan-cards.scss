@@ -5,6 +5,16 @@
     flex-wrap:nowrap;
     max-width:1440px;
     margin:0 auto;
+    padding:0 30px; 
+    @include mq(900px) {
+        display:block;
+    }
+    @include mq(800px) {
+        padding:0 20px;
+    }
+    @include mq(600px) {
+        padding:0 10px;
+    }
     @include responsive-text();
     .plan-card {
         overflow:hidden;
@@ -16,6 +26,19 @@
         box-sizing:border-box;
         padding:30px;
         position:relative;
+        @include mq(1000px) {
+            margin:10px;
+            width:calc(33.33% - 20px);
+        }
+        @include mq(900px) {
+            margin:0 0 10px 0;
+            width:calc(100%);
+            float:none;
+            padding:20px;
+        }
+        @include mq(600px) {
+            padding:15px;
+        }
         .plan-card-price {
             h1, h2, h3, h4, h5, h6, p {
                 display:inline-block;
@@ -23,13 +46,29 @@
         }
         .button-solid-gold {
             margin-top:20px;
+            @include mq(600px) {
+                width:100%;
+                max-width:none;
+                padding:0;
+                text-align:center;
+                margin-top:10px;
+            }
         }
         ul {
             margin-top:30px;
+            @include mq(800px) {
+                margin-top:20px;
+            }
+            @include mq(600px) {
+                margin-top:10px;
+            }
             li {
                 overflow:hidden;
                 padding:12px 0;
                 position:relative;
+                @include mq(600px) {
+                    padding:8px 0;
+                }
                 &:after {
                     content:'';
                     height:1px;
@@ -47,12 +86,19 @@
                 img {
                     width:25px;
                     float:left;
+                    @include mq(600px) {
+                        width:20px;
+                    }
                 }
                 p {
                     float:left;
                     width:calc(100% - 25px);
                     box-sizing:border-box;
                     padding:5px 0 0 10px;
+                    font-size:1em;
+                    @include mq(600px) {
+                        padding:0 0 0 5px;
+                    }
                 }
             }
         }
@@ -94,10 +140,22 @@
     visibility:hidden;
     @include transition(300ms);
     box-shadow:0 10px 20px rgba(13, 20, 28, 0.7), 0 6px 6px rgba(13, 20, 28, 1);
+    @include mq(1000px) {
+        top:20px;
+        @include translate(-50%, 20px);
+        max-height:100vh;
+    }
+    @include mq(600px) {
+        padding:20px;
+        
+    }
     &.active {
         opacity:1;
         visibility:visible;
         @include translate(-50%, -50%);
+        @include mq(1000px) {
+            @include translate(-50%, 0);
+        }
     }
     .gradient {
         position:absolute;
@@ -121,6 +179,10 @@
         background-position:center center;
         background-repeat:no-repeat;
         cursor:pointer;
+        @include mq(800px) {
+            width:15px;
+            height:15px;
+        }
     }
     .plan-cards-form {
         margin-top:20px;
@@ -202,13 +264,22 @@
     visibility:hidden;
     @include transition(300ms);
     box-shadow:0 10px 20px rgba(13, 20, 28, 0.7), 0 6px 6px rgba(13, 20, 28, 1);
+    @include mq(1000px) {
+        top:20px;
+        @include translate(-50%, 20px);
+        max-height:100vh;
+    }
     @include mq(600px) {
         padding:20px;
+        
     }
     &.active {
         opacity:1;
         visibility:visible;
         @include translate(-50%, -50%);
+        @include mq(1000px) {
+            @include translate(-50%, 0);
+        }
     }
     .all-details-close {
         width:20px;

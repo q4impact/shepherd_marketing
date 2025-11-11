@@ -1,5 +1,45 @@
 .card-tab-group {
-    padding:40px 0;
+    padding:40px 30px;
+    font-size:16px;
+    @include responsive-text();
+    @include mq(1000px) {
+        padding:20px;
+    }
+    @include mq(800px) {
+        padding:10px;
+    }
+    .card-tab-group-trigger {
+        display:block;
+        background-color:$dark_navy;
+        padding:15px;
+        font-size:1.1em;
+        color:$navy40;
+        cursor:pointer;
+        @include transition(300ms);
+        border:2px solid transparent;
+        @include border-radius(5px);
+        width:100%;
+        box-sizing: border-box;
+        color:$white;
+        background-image:url('images/icon-select-navy40.png');
+        background-size:10px;
+        background-position:right 15px center;
+        background-repeat:no-repeat;
+        display:none;
+        border:2px solid $navy80;
+        margin-bottom:10px;
+        @include mq(1000px) {
+            display:block;
+        }
+        @include mq(600px) {
+            padding:15px 10px;
+        }
+        span {
+            color:$navy40;
+            display:inline-block;
+            margin-left:5px;
+        }
+    }
     .card-tab-group-nav {
         position:relative;
         left:50%;
@@ -7,6 +47,28 @@
         display:inline-block;
         overflow:hidden;
         margin-bottom:30px;
+        @include mq(800px) {
+            position:absolute;
+            top:60px;
+            left:10px;
+            @include translate(0,0);
+            margin:0;
+            background-color:$navy;
+            z-index:10;
+            width:calc(100% - 20px);
+            box-sizing: border-box;
+            padding:20px;
+            @include border-radius(5px);
+            opacity:0;
+            visibility:hidden;
+            @include transition(300ms);
+            box-shadow:0 10px 20px rgba(13, 20, 28, 0.7), 0 6px 6px rgba(13, 20, 28, 1);
+            border:2px solid $navy80;
+            &.active {
+                opacity:1;
+                visibility:visible;
+            }
+        }
         li {
             float:left;
             color:$navy40;
@@ -16,6 +78,12 @@
             margin:0 10px;
             cursor:pointer;
             @include transition(300ms);
+            @include mq(800px) {
+                float:none;
+                display:block;
+                padding:10px 0;
+                margin:0;
+            }
             &:after {
                 content:'';
                 position:absolute;
@@ -27,6 +95,10 @@
                 width:0;
                 @include transition(300ms);
                 @include border-radius(2px);
+                @include mq(800px) {
+                    display:none;
+                }
+
             }
             &:hover {
                 color:$white;
@@ -42,13 +114,15 @@
     }
     .card-tab-group-tab {
         display:none;
-        font-size:16px;
         &.active {
             display:block;
         }
         .kicker-container {
             overflow:hidden;
             margin-bottom:20px;
+            @include mq(1000px) {
+                margin-bottom:10px;
+            }
             h1, h2, h3, h4, h5, h6 {
                 line-height:30px;
             }
@@ -67,8 +141,17 @@
             box-sizing:border-box;
             border:2px solid $navy80;
             position:relative;
-            min-height:500px;
+            min-height:0;
             background-color:$dark_navy;
+            @include mq(1440px) {
+                min-height:none;
+            }
+            @include mq(1000px) {
+                padding:20px;
+            }
+            @include mq(800px) {
+                padding:15px;
+            }
             &.active {
                 animation: slideUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
             }
@@ -97,6 +180,22 @@
                 float:left;
                 position:relative;
                 z-index:4;
+                @include mq(1000px) {
+                    width:100%;
+                    float:none;
+                    margin-bottom:20px;
+                    h1, h2, h3, h4, h5, h6, p {
+                        margin-bottom:10px !important;
+                    }
+                }
+                @include mq(600px) {
+                    .button-solid-gold {
+                        width:100%;
+                        padding:0;
+                        text-align:center;
+                        max-width:none;
+                    }
+                }
             }
             .card-tab-group-card-1-image {
                 width:calc(66.66% - 80px);
@@ -105,6 +204,12 @@
                 top:30px;
                 z-index:2;
                 box-sizing:border-box;
+                @include mq(1000px) {
+                    position:static;
+                    top:auto;
+                    right:auto;
+                    width:calc(100%);
+                }
                 img {
                     width:100%;
                 }
@@ -114,6 +219,9 @@
             display:flex;
             flex-direction:row;
             flex-wrap:nowrap;
+            @include mq(1000px) {
+                display:block;
+            }
         }
         .card-tab-group-card-2, .card-tab-group-card-3 {
             overflow:hidden;
@@ -127,6 +235,18 @@
             margin-top:30px;
             opacity:0;
             background-color:$dark_navy;
+            @include mq(1000px) {
+                width:calc(100%);
+                float:none;
+                padding:20px;
+            }
+            @include mq(800px) {
+                padding:15px;
+            }
+            @include mq(600px) {
+                padding-bottom:400px;
+            }
+            
             .card-tab-group-filter {
                 position:absolute;
                 bottom:0;
@@ -152,6 +272,21 @@
                 float:left;
                 position:relative;
                 z-index:4;
+                @include mq(1000px) {
+                    h1, h2, h3, h4, h5, h6, p {
+                        margin-bottom:10px !important;
+                    }
+                }
+                @include mq(600px) {
+                    width:100%;
+                    float:none;
+                    .button-solid-gold {
+                        width:100%;
+                        padding:0;
+                        text-align:center;
+                        max-width:none;
+                    }
+                }
             }
             .card-tab-group-card-image {
                 width:calc(50% - 50px);
@@ -160,6 +295,23 @@
                 right:30px;
                 top:30px;
                 box-sizing:border-box;
+                @include mq(1000px) {
+                    width:calc(40% - 20px);
+                }
+                @include mq(600px) {
+                    top:auto;
+                    right:auto;
+                    bottom:-40%;
+                    width:300px;
+                    left:50%;
+                    @include translate(-50%, 0);
+                }
+                @include mq(500px) {
+                    bottom:-40%;
+                }
+                @include mq(400px) {
+                    //bottom:calc(-100% + 420px);
+                }
                 img {
                     width:100%;
                 }
@@ -167,6 +319,9 @@
         }
         .card-tab-group-card-2 {
             margin-right:15px;
+            @include mq(800px) {
+                margin:10px 0 0 0;
+            }
             &.active {
                 animation: slideUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
                 animation-delay:150ms;
@@ -174,6 +329,9 @@
         }
         .card-tab-group-card-3 {
             margin-left:15px;
+            @include mq(800px) {
+                margin:10px 0 0 0;
+            }
             &.active {
                 animation: slideUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
                 animation-delay:300ms;

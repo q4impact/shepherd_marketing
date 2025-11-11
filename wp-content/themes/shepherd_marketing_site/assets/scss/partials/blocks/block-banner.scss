@@ -1,0 +1,53 @@
+.block-banner {
+    padding-top:150px;
+    background-color:$navy;
+    .banner-slider {
+        width:100%;
+        max-width:1440px;
+        position:relative;
+        left:50%;
+        @include translate(-50%, 0);
+        height:800px;
+        .slick-list, .slick-track {
+            height:800px;
+        }
+        .slick-prev, .slick-next {
+            position:absolute;
+            top:50%;
+        }
+        .slick-prev {
+            left:0;
+        }
+        .slick-next {
+            right:0;
+        }
+        .slick-dots {
+            position:absolute;
+            bottom:0;
+            left:50%;
+            li {
+                float:left;
+                background-color:$navy80;
+                &.slick-active {
+                    background-color:$blue;
+                }
+                button {
+                    opacity:0;
+                }
+            }
+        }
+        .banner-slide {
+            float:left;
+            h1 {
+                color:$white;
+            }
+            h2 {
+                color:$gold;
+            }
+            p {
+                color:$navy40;
+            }
+        }
+    }
+
+}

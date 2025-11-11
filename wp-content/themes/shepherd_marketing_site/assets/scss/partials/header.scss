@@ -1,0 +1,173 @@
+header {
+    width:100%;
+    height:125px;
+    @include transition(500ms);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:12;
+    font-size:16px;
+    @include responsive-text();
+    @include mq(1440px) {
+        height:80px;
+    }
+    @include mq(1000px) {
+        height:70px;
+    }
+    @include mq(800px) {
+        height:60px;
+    }
+    &.sticky {
+        height:80px;
+        background-color:$dark_navy;
+        @include mq(1440px) {
+            height:60px;
+        }
+        @include mq(1000px) {
+            height:50px;
+        } 
+        @include mq(800px) {
+            height:60px;
+        }
+        #header-logo {
+            width:150px;
+            margin-top:20px;
+            @include mq(1440px) {
+                width:140px;
+                margin-top:10px;
+            }
+            @include mq(1000px) {
+                width:120px;
+            }
+            @include mq(800px) {
+                width:140px;
+                margin-top:10px;
+            }
+        }
+        ul {
+            margin-top:20px;
+            @include mq(1440px) {
+                margin-top:10px;
+            }
+            @include mq(800px) {
+                margin-top:0;
+            }
+        }
+         &:after {
+            opacity:0.5;
+        }
+    }
+    &:after {
+        content:'';
+        height:1px;
+        background: linear-gradient(to right, rgba(67,76,87,0) 0%,rgba(67,76,87,1) 25%,rgba(67,76,87,1) 75%,rgba(67,76,87,0) 100%);
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+    }
+    #header-logo {
+        margin-top:35px;
+        width:200px;
+        float:left;
+        @include transition(500ms);
+        @include mq(1440px) {
+            width:160px;
+            margin-top:20px;
+        }
+        @include mq(1000px) {
+            width:140px;
+            margin-top:15px;
+        }
+        @include mq(800px) {
+            width:140px;
+            margin-top:10px;
+        }
+        svg {
+            width:100%;
+        }
+    }
+    ul {
+        float:right;
+        position:relative;
+        display:inline-block;
+        margin-top:43px;
+        @include transition(500ms);
+        @include mq(1440px) {
+            margin-top:20px;
+        }
+        @include mq(1000px) {
+            margin-top:20px;
+        }
+        @include mq(800px) {
+            position:absolute;
+            margin-top:0;
+            top:60px;
+            left:0;
+            width:100%;
+            height:calc(100vh - 60px);
+            background-color:$navy;
+            padding-top:20px;
+            display:none;
+        }
+        li {
+            float:left;
+            @include mq(800px) {
+                float:none;
+            }
+            a {
+                display:block;
+                color:$navy40;
+                text-decoration:none;
+                line-height:40px;
+                padding:0 20px;
+                font-size:1em;
+                @include mq(1440px) {
+                    padding:0 15px;
+                }
+                @include mq(1000px) {
+                    padding:0 10px;
+                    line-height:30px;
+                }
+                @include mq(800px) {
+                    text-align:center;
+                    font-size:1.25em;
+                    padding:5px 0;
+                }
+                &:hover {
+                    color:$white;
+                }    
+            }
+            &.menu-contact {
+                background-color:$gold;
+                @include border-radius(5px);
+                margin-left:10px;
+                @include mq(800px) {
+                    text-align:center;
+                    background-color:transparent;
+                    margin-left:0;
+                }
+                a {
+                    color:$white;
+                    @include mq(800px) {
+                        display:inline-block;
+                        background-color:$gold;
+                        @include border-radius(5px);
+                        padding:5px 20px;
+                    }
+                }
+                &.current-menu-item {
+                    a {
+                        color:$white;
+                    }
+                }
+            }
+            &.current-menu-item {
+                a {
+                    color:$blue;
+                    opacity:1;
+                }
+            }
+        }
+    }
+}

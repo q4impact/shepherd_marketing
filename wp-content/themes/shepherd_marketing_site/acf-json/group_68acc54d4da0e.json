@@ -1,0 +1,198 @@
+{
+    "key": "group_68acc54d4da0e",
+    "title": "Text Settings",
+    "fields": [
+        {
+            "key": "field_68acc54d8215e",
+            "label": "Font Size",
+            "name": "size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0.5em": "0.5em",
+                "0.75em": "0.75em",
+                "1em": "1em",
+                "1.25em": "1.25em",
+                "1.5em": "1.5em",
+                "1.75em": "1.75em",
+                "2em": "2em",
+                "2.25em": "2.25em",
+                "2.5em": "2.5em",
+                "2.75em": "2.75em",
+                "3em": "3em",
+                "3.25em": "3.25em",
+                "3.5em": "3.5em",
+                "3.75em": "3.75em",
+                "4em": "4em",
+                "4.25em": "4.25em",
+                "4.5em": "4.5em",
+                "4.75em": "4.75em",
+                "5em": "5em",
+                "5.25em": "5.25em",
+                "5.5em": "5.5em",
+                "5.75em": "5.75em",
+                "6em": "6em"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_68acc8cb82e7a",
+            "label": "Color",
+            "name": "color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "#15212e": "Navy",
+                "#434c57": "Navy 80",
+                "#737a82": "Navy 60",
+                "#a1a6ac": "Navy 40",
+                "#f29c1f": "Gold",
+                "#6e8fbf": "Blue",
+                "#ffffff": "White",
+                "#a0a0a5": "Gray"
+            },
+            "default_value": "#ffffff",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_68acc83885537",
+            "label": "Weight",
+            "name": "weight",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "300": "300",
+                "400": "400",
+                "500": "500",
+                "600": "600",
+                "800": "800",
+                "900": "900"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_68acc90d82e7b",
+            "label": "HTML Tag",
+            "name": "html",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
+                "p": "p"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_68f8f14193d17",
+            "label": "Max Width (px)",
+            "name": "max_width",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761145252
+}

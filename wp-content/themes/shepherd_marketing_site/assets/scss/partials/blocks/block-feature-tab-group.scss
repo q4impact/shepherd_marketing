@@ -1,0 +1,160 @@
+.feature-tab-group {
+    font-size:16px;
+    padding:40px 30px;
+    @include mq(1000px) {
+        padding:30px 20px;
+    }
+    @include mq(800px) {
+        padding:20px 10px;
+    }
+    @include responsive-text();
+    .feature-tab-group-nav {
+        overflow:hidden;
+        text-align:center;
+        margin-bottom:50px;
+        @include mq(1000px) {
+            margin-bottom:20px;
+        }
+        .feature-tab-group-nav-item {
+            display:inline-block;
+            color:$white;
+            line-height:40px;
+            margin:0 20px 0 0;
+            padding:0 0 10px 0;
+            opacity:0.7;
+            position:relative;
+            @include transition(300ms);
+            cursor:pointer;
+            &:after {
+                content:'';
+                position:absolute;
+                bottom:0;
+                left:50%;
+                @include translate(-50%, 0);
+                width:0;
+                height:4px;
+                background-color:$gold;
+                @include border-radius(2px);
+                @include transition(300ms);
+            }
+            &.active {
+                opacity:1;
+                &:after {
+                    width:100%;
+                }
+            }
+            &:hover {
+                opacity:1;
+            }
+            img {
+                width:22px;
+                margin-right:10px;
+                vertical-align:middle;
+            }
+        }
+    }
+    .feature-tab-group-tab {
+        display:none;
+        &.active {
+            display:block;
+
+        }
+        .feature-tab-group-tab-text {
+            width:25%;
+            float:left;
+            opacity:0;
+            padding-top:30px;
+            &.active {
+                animation: slideUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            @include mq(1000px) {
+                width:100%;
+                float:none;
+                text-align:center;
+            }
+            h1, h2, h3, h4, h5, h6, p {
+                @include mq(1000px) {
+                    position:relative;
+                    left:50%;
+                    @include translate(-50%, 0);
+                }
+            }
+            .button-solid-gold {
+                margin-top:20px;
+                @include mq(1000px) {
+                    margin-top:10px;
+                }
+            }
+            .highlights {
+                margin-top:20px;
+                @include mq(1000px) {
+                    overflow:hidden;
+                     text-align:center;
+                }
+                li {
+                    color:$white;
+                    margin-bottom:20px;
+                    @include mq(1000px) {
+                        
+                        margin-bottom:10px;
+                    }
+                    p {
+                        @include mq(1000px) {
+                            text-align:left;
+                            white-space:nowrap;
+                        }    
+                    }
+                    img {
+                        float:left;
+                        vertical-align:middle;
+                        width:25px;
+                        margin-right:10px;
+                        @include mq(1000px) {
+                            margin-right:5px;
+                        }
+                    }
+                }
+            }
+        }
+        .feature-tab-group-tab-image {
+            width:75%;
+            float:left;
+            padding-left:30px;
+            box-sizing:border-box;
+            opacity:0;
+            &.active {
+                animation: slideLeft 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                animation-delay:150ms;
+            }
+            @include mq(1000px) {
+                width:100%;
+                float:none;
+                padding-left:0;
+            }
+            img {
+                width:100%;
+            }
+        }
+    }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

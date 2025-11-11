@@ -1,0 +1,55 @@
+.button {
+    display:inline-block;
+    height:45px;
+    line-height:45px;
+    padding:0 30px;
+    font-size:16px;
+    @include border-radius(5px);
+    @include transition(300ms);
+    text-decoration:none;
+    font-weight:300;
+    @include mq(1000px) {
+        height:40px;
+        line-height:40px;
+    }
+    @include mq(800px) {
+        height:35px;
+        line-height:35px;
+        padding:0 20px;
+        font-size:15px;
+    }
+    @include mq(600px) {
+        height:30px;
+        line-height:30px;
+        padding:0 15px;
+        font-size:14px;
+        max-width:250px;
+    }
+}
+.button-solid-navy {
+    @extend .button;
+    background-color:$navy80;
+    color:$navy20;
+    &:hover {
+        color:$white;
+        background-color:$navy60;
+    }
+}
+.button-solid-gold {
+    @extend .button;
+    background-color:$gold;
+    color:$white;
+    &:hover {
+        color:$white;
+        filter: brightness(1.1);
+    }
+}
+.button-outline-white {
+    @extend .button;
+    border:1px solid $white;
+    color:$navy20;
+    &:hover {
+        border-color:$gold;
+        color:$gold;
+    }
+}

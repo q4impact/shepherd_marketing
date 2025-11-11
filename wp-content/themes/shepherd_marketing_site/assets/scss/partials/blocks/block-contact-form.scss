@@ -1,0 +1,120 @@
+.block-contact-form {
+    padding:50px 0;
+    font-size:16px;
+    .contact-form-container {
+        overflow:hidden;
+        padding:30px;
+        border:2px solid $navy80;
+        background-color:$dark_navy;
+        @include border-radius(10px);
+        position:relative;
+        .gradient {
+            position:absolute;
+            top:-125%;
+            left:50%;
+            @include translate(-50%, 0);
+            width:150%;
+            height:200%;
+            z-index:1;
+            background: radial-gradient(ellipse at center, rgba(110,143,191,1) 0%,rgba(110,143,191,0) 67%);
+            opacity:0.5;
+        }
+        .contact-form-text {
+            width:40%;
+            box-sizing:border-box;
+            padding-right:30px;
+            float:left;
+            position:relative;
+            z-index:2;
+            .contact-form-phone {
+                margin-top:50px;
+                width:50%;
+                float:left;
+                img {
+                    width:30px;
+                }
+            }
+            .contact-form-email {
+                margin-top:50px;
+                width:50%;
+                float:left;
+                img {
+                    width:30px;
+                }
+            }
+            .contact-form-message {
+                clear:both;
+                padding-top:20px;
+            }
+        }
+        .contact-form-form {
+            float:left;
+            width:60%;
+            position:relative;
+            z-index:2;
+            label {
+                color:$navy40;
+                font-weight:400;
+                margin-bottom:5px;
+            }
+            .wpforms-field {
+                clear:none;
+                input, select {
+                    max-width:none;
+                    width:100%;
+                    box-sizing:border-box;
+                    &.wpforms-error {
+                        border:1px solid $red;
+                    }
+                }
+            }
+            .wpforms-error {
+                margin-top:8px;
+                color:$red;
+            }
+            .first-name, .last-name {
+                width:calc(50% - 10px);
+                float:left;     
+            }
+            .first-name {
+                margin-right:10px;
+            }
+            .last-name {
+                margin-left:10px;
+            }
+            .email {
+                clear:left;
+                width:100%;
+            }
+            .company, .state {
+                width:calc(50% - 10px);
+                float:left;     
+            }
+            .company {
+                margin-right:10px;
+            }
+            .state {
+                margin-left:10px;
+            }
+            .message {
+                clear:left;
+            }
+            .submit {
+                display:inline-block;
+                height:45px;
+                line-height:45px;
+                padding:0 30px;
+                font-size:16px;
+                @include border-radius(5px);
+                @include transition(300ms);
+                text-decoration:none;
+                font-weight:300;
+                width:100%;
+                background-color:$gold;
+                margin-top:20px;
+                border:0px;
+                color:$white;
+            }
+        }
+    }
+}

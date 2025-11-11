@@ -1,0 +1,11 @@
+<?php
+foreach(glob(get_template_directory() . "/library/main/*.php") as $file){
+  require $file;
+}
+foreach(glob(get_template_directory() . "/library/ajax/*.php") as $file){
+  require $file;
+}
+foreach(glob(get_template_directory() . "/library/blocks/*.php") as $file){
+  require $file;
+}
+

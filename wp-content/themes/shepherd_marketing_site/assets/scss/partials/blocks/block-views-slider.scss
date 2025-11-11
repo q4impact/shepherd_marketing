@@ -1,0 +1,50 @@
+.views-slider {
+    .swiper-slide {
+        height:650px;
+        position:relative;
+        .layout1 {
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:100%;
+            @include translate(-50%, -50%);
+            div {
+                float:left;
+                background-color:#333;
+                margin:10px;
+                &:nth-of-type(1) {
+                    width:calc(72.75% - 20px);
+                    aspect-ratio: 16 / 9;
+                }
+                &:nth-of-type(2) {
+                    width:calc(27.25% - 20px);
+                    aspect-ratio: 4 / 3;
+                }
+                &:nth-of-type(3) {
+                    width:calc(27.25% - 20px);
+                    aspect-ratio: 4 / 3;
+                }
+            }
+        }
+        .layout2 {
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:100%;
+            @include translate(-50%, -50%);
+            div {
+                float:left;
+                background-color:#333;
+                margin:10px;
+                &:nth-of-type(1) {
+                    width:calc(24.75% - 20px);
+                    aspect-ratio: 9 / 16;
+                }
+                &:nth-of-type(2) {
+                    width:calc(75.25% - 20px);
+                    aspect-ratio: 16 / 9;
+                }
+            }
+        }
+    }
+}

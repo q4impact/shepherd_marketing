@@ -1,0 +1,33 @@
+.icon-list {
+    padding:40px 0;
+    font-size:16px;
+    li {
+        float:left;
+        width:50%;
+        box-sizing:border-box;
+        padding:20px 40px;
+        overflow:hidden;
+        .icon-list-text {
+            width:calc(100% - 80px);
+            box-sizing:border-box;
+            padding-left:30px;
+            float:left;
+            h1, h2, h3, h4, h5, h6, p {
+                margin-bottom:10px;
+            }
+        }
+        .icon-list-image {
+            width:80px;
+            aspect-ratio:1;
+            float:left;
+            position:relative;
+            img {
+                position:absolute;
+                top:50%;
+                left:50%;
+                width:90%;
+                @include translate(-50%, -50%);
+            }
+        }
+    }
+}

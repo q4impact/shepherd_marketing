@@ -1,0 +1,118 @@
+footer {
+    position:relative;
+    #footer-gradient {
+        background: radial-gradient(ellipse at center, rgba(110,143,191,1) 0%,rgba(110,143,191,0) 67%);
+        position:absolute;
+        bottom:-125%;
+        height:200%;
+        left:50%;
+        @include translate(-50%, 0);
+        width:125%;
+        opacity:0.4;
+        z-index:-1;
+    }
+    #footer-top {
+        position:relative;
+        padding:80px 0 20px 0;
+        &:before {
+            content:'';
+            height:1px;
+            background: linear-gradient(to right, rgba(67,76,87,0) 0%,rgba(67,76,87,1) 25%,rgba(67,76,87,1) 75%,rgba(67,76,87,0) 100%);
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+        }
+        #footer-logo {
+            width:200px;
+            float:left;
+        }
+        p {
+            float:right;
+            margin-top:15px;
+        }
+    }
+    #footer-mid {
+        padding:50px 0 100px 0;
+        &:before {
+            content:'';
+            height:1px;
+            background: linear-gradient(to right, rgba(67,76,87,0) 0%,rgba(67,76,87,1) 25%,rgba(67,76,87,1) 75%,rgba(67,76,87,0) 100%);
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+        }
+        #footer-mid-nav {
+            width:50%;
+            float:left;
+            .footer-mid-nav-col {
+                margin-right:40px;
+                float:left;
+                h3 {
+                    font-size:20px;
+                    margin-bottom:15px;
+                    font-weight:600;
+                }
+                a {
+                    padding:10px 0;
+                    display:block;
+                }
+            }
+        }
+        #footer-mid-demo {
+            float:right;
+            width:50%;
+            max-width:400px;
+            h3 {
+                font-size:24px;
+                font-weight:600;
+                margin-bottom:10px;
+            }
+            p {
+                margin-bottom:20px;
+            }
+            #footer-demo-input {
+                @include border-radius(5px);
+                overflow:hidden;
+                position:relative;
+                input {
+                    width:100%;  
+                }
+                a {
+                    position:absolute;
+                    right:0;
+                    top:0;
+                    height:100%;
+                    aspect-ratio:1;
+                    background-color:$gold;
+                    background-image:url('images/svg/icon-send-white.svg');
+                    background-size:50%;
+                    background-position: center center;
+                    background-repeat:no-repeat;
+                }
+            }
+        }
+    }
+    #footer-bottom {
+        padding:40px 0 40px 0;
+        #footer-copyright {
+            color:$navy60;
+            float:left;
+            font-size:0.75em;
+        }
+        #footer-social {
+            float:right;
+            a {
+                display:inline-block;
+                width:30px;
+                height:30px;
+                opacity:0.7;
+                margin-left:10px;
+                &:hover {
+                    opacity:1;
+                }
+            }
+        }
+    }
+}

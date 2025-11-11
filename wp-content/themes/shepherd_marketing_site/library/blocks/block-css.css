@@ -1,0 +1,74 @@
+/* Only affects the editor */
+.hn-admin-collapsible {
+    border:1px solid #999999;
+    max-width:1440px;
+    margin:0 auto 20px auto;
+    box-sizing:border-box;
+}
+.hn-admin-collapsible__mover {
+    float:right;
+}
+.hn-admin-collapsible__bar {
+  border: 1px solid #999999;
+  background-color:#999999;
+  position:relative;
+  height:50px;
+}
+.hn-admin-collapsible__label {
+  font-size: 12px;
+  color: #666;
+}
+.hn-admin-collapsible__title {
+    color:#ffffff;
+    margin:0 0 0 20px;
+    font-size:16px;
+    line-height:50px;
+}
+.hn-admin-collapsible__toggle {
+    float:right;
+}
+.hn-admin-collapsible.is-collapsed .hn-admin-collapsible__body {
+    display: none;
+}
+.wp-block {
+    max-width: none;
+    margin:0;
+}
+.block-editor-button-block-appender {
+    max-width:1440px;
+    background-color:#006BA1;
+    color:#ffffff;
+    border-color:#006BA1;
+    box-shadow:none;
+    margin:0 auto;
+}
+.hn-admin-collapsible__drag {
+  cursor: grab;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding: .15rem .35rem;
+  line-height: 1;
+}
+.hn-admin-collapsible__drag:active { cursor: grabbing; }
+
+
+/* Scope: editor only – add `.block-editor` to be extra safe */
+.block-editor .block-editor-block-list__block[data-type^="acf/"] .block-editor-block-toolbar .block-editor-block-switcher { display: none !important; }
+.block-editor .block-editor-block-list__block[data-type^="acf/"] .block-editor-block-toolbar .block-editor-block-mover    { display: none !important; }
+.block-editor .block-editor-block-list__block[data-type^="acf/"] .block-editor-block-toolbar .block-editor-block-styles__selector { display: none !important; }
+.block-editor .block-editor-block-list__block[data-type^="acf/"] .block-editor-block-toolbar .components-dropdown-menu[aria-label="Options"] { display: none !important; }
+
+/* Collapsible header layout */
+.hn-admin-collapsible__bar { display:flex; align-items:center; gap:.5rem; }
+.hn-admin-collapsible__title { margin: 0; font-weight: 600; }
+.hn-admin-collapsible__toggle {
+  margin-left: auto;
+}
+.hn-admin-collapsible__drag {
+  cursor: grab; border:1px solid #ddd; background:#f7f7f7; border-radius:4px;
+  padding:.15rem .35rem; line-height:1;
+}
+.hn-admin-collapsible__drag:active { cursor: grabbing; }
+.hn-admin-collapsible.is-collapsed .hn-admin-collapsible__body { display:none; }
+

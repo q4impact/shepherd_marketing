@@ -1,5 +1,12 @@
+html {
+    height:100%;
+}
 body {
     background:$dark_navy;
+}
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
 }
 #page-wrapper {
     overflow:hidden;

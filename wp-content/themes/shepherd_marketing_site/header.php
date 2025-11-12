@@ -26,7 +26,7 @@ $x_url = get_field('settings_footer_x_url', 'option');
 				<div class="inner-wrapper clearfix">
 					<div id="menu-toggle"></div>
 					<div id="header-logo">
-						<?php echo get_template_part('inc/header-logo'); ?>
+						<a href="<?php echo get_home_url(); ?>"><?php echo get_template_part('inc/header-logo'); ?></a>
 					</div>
 					<?php blankie_nav(); ?>
 					<div id="header-social">

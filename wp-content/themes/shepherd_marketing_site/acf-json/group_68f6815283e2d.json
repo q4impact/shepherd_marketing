@@ -1399,7 +1399,7 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
-                            "key": "field_68f7d93bec1e8",
+                            "key": "field_6914bb4ac5e56",
                             "label": "Icon",
                             "name": "icon",
                             "aria-label": "",
@@ -1412,8 +1412,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "",
-                            "library": "",
+                            "return_format": "array",
+                            "library": "all",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -2940,5 +2940,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1762806488
+    "modified": 1762966365
 }

@@ -1,7 +1,8 @@
 <?php
 add_action('acf/init', 'block_heading_narrative');
-function block_heading_narrative() {
-    if ( ! function_exists('acf_register_block') ) return;
+function block_heading_narrative()
+{
+    if (! function_exists('acf_register_block')) return;
 
     $icon = '<svg ...>...</svg>';
 
@@ -12,7 +13,7 @@ function block_heading_narrative() {
         'render_template'   => 'block-parts/block-heading-narrative.php',
         'category'          => 'theme',
         'icon'              => $icon,
-        'keywords'          => array('heading','narrative'),
+        'keywords'          => array('heading', 'narrative'),
 
         // 👉 Key: turn off the Edit/Preview mode switcher
         'supports'          => array(
@@ -29,13 +30,19 @@ function block_heading_narrative() {
         ),
 
         'enqueue_assets' => function () {
-            if ( ! is_admin() ) return;
-            if ( function_exists('get_current_screen') ) {
-                $screen = get_current_screen();
-                // In case this fires in non-editor admin screens
-                if ( method_exists( $screen, 'is_block_editor' ) && ! $screen->is_block_editor() ) {
-                    return;
-                }
+            if (! is_admin()) return;
+            if (! function_exists('get_current_screen')) return;
+
+            $screen = get_current_screen();
+
+            // Guard: ensure $screen is an object before calling method_exists() on it.
+            if (! is_object($screen)) {
+                return;
+            }
+
+            // Now it's safe to call method_exists() and is_block_editor()
+            if (method_exists($screen, 'is_block_editor') && ! $screen->is_block_editor()) {
+                return;
             }
 
             $base = get_template_directory_uri() . '/library/blocks';
@@ -44,8 +51,8 @@ function block_heading_narrative() {
             wp_enqueue_script(
                 'hn-admin-collapse',
                 $base . '/block-scripts.js',
-                ['wp-blocks','wp-element','wp-components','wp-block-editor','wp-data','wp-hooks','wp-i18n','wp-compose'],
-                ( file_exists($path . '/block-scripts.js') ? filemtime($path . '/block-scripts.js') : null ),
+                ['wp-blocks', 'wp-element', 'wp-components', 'wp-block-editor', 'wp-data', 'wp-hooks', 'wp-i18n', 'wp-compose'],
+                (file_exists($path . '/block-scripts.js') ? filemtime($path . '/block-scripts.js') : null),
                 true
             );
 
@@ -53,7 +60,7 @@ function block_heading_narrative() {
                 'hn-admin-collapse-css',
                 $base . '/block-css.css',
                 ['wp-edit-blocks'],
-                ( file_exists($path . '/block-css.css') ? filemtime($path . '/block-css.css') : null )
+                (file_exists($path . '/block-css.css') ? filemtime($path . '/block-css.css') : null)
             );
         }
     ));

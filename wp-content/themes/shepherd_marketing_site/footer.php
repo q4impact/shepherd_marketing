@@ -4,12 +4,20 @@ $demo_narrative = get_field('settings_footer_demo_narrative', 'option');
 $facebook_url = get_field('settings_footer_facebook_url', 'option');
 $linkedin_url = get_field('settings_footer_linkedin_url', 'option');
 $x_url = get_field('settings_footer_x_url', 'option');
-$menu_1 = get_field('settings_footer_menu_1', 'option');
-$menu_1_items = $menu_1['menu_items'];
-$menu_2 = get_field('settings_footer_menu_2', 'option');
-$menu_2_items = $menu_2['menu_items'];
-$menu_3 = get_field('settings_footer_menu_3', 'option');
-$menu_3_items = $menu_3['menu_items'];
+// $menu_1 = get_field('settings_footer_menu_1', 'option');
+// $menu_1_items = $menu_1['menu_items'];
+// $menu_2 = get_field('settings_footer_menu_2', 'option');
+// $menu_2_items = $menu_2['menu_items'];
+// $menu_3 = get_field('settings_footer_menu_3', 'option');
+// $menu_3_items = $menu_3['menu_items'];
+$menu_1 = get_field('settings_footer_menu_1', 'option') ?: [];
+$menu_1_items = $menu_1['menu_items'] ?? [];
+
+$menu_2 = get_field('settings_footer_menu_2', 'option') ?: [];
+$menu_2_items = $menu_2['menu_items'] ?? [];
+
+$menu_3 = get_field('settings_footer_menu_3', 'option') ?: [];
+$menu_3_items = $menu_3['menu_items'] ?? [];
 ?>
 			<footer>
 				<div class="inner-wrapper clearfix" id="footer-top">
@@ -21,24 +29,24 @@ $menu_3_items = $menu_3['menu_items'];
 				<div id="footer-mid" class="inner-wrapper clearfix">
 					<div id="footer-mid-nav" class="clearfix">
 						<div class="footer-mid-nav-col">
-							<?php if ($menu_1['heading']) { ?><h3><?php echo $menu_1['heading']; ?></h3><?php } ?>
-							<?php if ($menu_1_items) {
+							<?php if (!empty($menu_1['heading'])) { ?><h3><?php echo $menu_1['heading']; ?></h3><?php } ?>
+							<?php if (!empty($menu_1_items)) {
 								foreach ($menu_1_items as $item) { ?>
 									<a href="<?php echo $item['link']; ?>"><?php if ($item['label']) { echo $item['label']; } ?></a>
 								<?php } ?>
 							<?php } ?>
 						</div>
 						<div class="footer-mid-nav-col">
-							<?php if ($menu_2['heading']) { ?><h3><?php echo $menu_2['heading']; ?></h3><?php } ?>
-							<?php if ($menu_2_items) {
+							<?php if (!empty($menu_2['heading'])) { ?><h3><?php echo $menu_2['heading']; ?></h3><?php } ?>
+							<?php if (!empty($menu_2_items)) {
 								foreach ($menu_2_items as $item) { ?>
 									<a href="<?php echo $item['link']; ?>"><?php if ($item['label']) { echo $item['label']; } ?></a>
 								<?php } ?>
 							<?php } ?>
 						</div>
 						<div class="footer-mid-nav-col">
-							<?php if ($menu_3['heading']) { ?><h3><?php echo $menu_3['heading']; ?></h3><?php } ?>
-							<?php if ($menu_3_items) {
+							<?php if (!empty($menu_3['heading'])) { ?><h3><?php echo $menu_3['heading']; ?></h3><?php } ?>
+							<?php if (!empty($menu_3_items)) {
 								foreach ($menu_3_items as $item) { ?>
 									<a href="<?php echo $item['link']; ?>"><?php if ($item['label']) { echo $item['label']; } ?></a>
 								<?php } ?>

@@ -4,12 +4,6 @@ $demo_narrative = get_field('settings_footer_demo_narrative', 'option');
 $facebook_url = get_field('settings_footer_facebook_url', 'option');
 $linkedin_url = get_field('settings_footer_linkedin_url', 'option');
 $x_url = get_field('settings_footer_x_url', 'option');
-// $menu_1 = get_field('settings_footer_menu_1', 'option');
-// $menu_1_items = $menu_1['menu_items'];
-// $menu_2 = get_field('settings_footer_menu_2', 'option');
-// $menu_2_items = $menu_2['menu_items'];
-// $menu_3 = get_field('settings_footer_menu_3', 'option');
-// $menu_3_items = $menu_3['menu_items'];
 $menu_1 = get_field('settings_footer_menu_1', 'option') ?: [];
 $menu_1_items = $menu_1['menu_items'] ?? [];
 
@@ -57,7 +51,7 @@ $menu_3_items = $menu_3['menu_items'] ?? [];
 						<h3><?php if ($demo_heading) { echo $demo_heading; } ?></h3>
 						<p><?php if ($demo_narrative) { echo $demo_narrative; } ?></p>
 						<div id="footer-demo-input">
-							<?php echo do_shortcode('[wpforms id="1236" title="false"]'); ?>
+							<?php echo do_shortcode('[wpforms id="1373" title="false"]'); ?>
 							
 						</div>
 					</div>
